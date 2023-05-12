@@ -1,0 +1,19 @@
+{
+  "bos_token": "[CLS]",
+  "cls_token": "[CLS]",
+  "do_basic_tokenize": true,
+  "do_lower_case": false,
+  "eos_token": "[EOS]",
+  "mask_token": "[MASK]",
+  "model_max_length": 1000000000000000019884624838656,
+  "name_or_path": "/mnt/nlp01/usr/zhengayong/heywhale/my_bart-large-chinese_v1",
+  "never_split": null,
+  "pad_token": "[PAD]",
+  "sep_token": "[SEP]",
+  "special_tokens_map_file": "vocab/cpt_v3_vocab/special_tokens_map.json",
+  "strip_accents": null,
+  "tokenize_chinese_chars": true,
+  "tokenizer_class": "BertTokenizer",
+  "tokenizer_file": null,
+  "unk_token": "[UNK]"
+}
