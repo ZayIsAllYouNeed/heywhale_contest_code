@@ -199,7 +199,7 @@ def inference(model_paths, input_data_path, output_data_path):
     training_args._n_gpu=1 #使用的 GPU 数量
     training_args.do_train = False #取消训练
     training_args.do_eval = False #取消验证
-    training_args.fp16 = True #半精度
+    training_args.fp16 = True #半精度，可以不注释，900s基础上快40s，但score没变
     
     column_names = datasets["test"].column_names
     max_target_length = data_args.val_max_target_length
@@ -208,8 +208,8 @@ def inference(model_paths, input_data_path, output_data_path):
     tokenizer=BertTokenizer.from_pretrained(model_args.model_name_or_path)#, use_fast=True)#use_fast=True
     model=BartForConditionalGeneration.from_pretrained(model_args.model_name_or_path)
     model.config.max_length=data_args.val_max_target_length
-    model.half() # 半精度
-    # model.cuda()
+    # 如需半精度推理，只需要取消注释以下该行
+    # model.half() # 半精度
     if "test" not in datasets:
         raise ValueError("--do_predict requires a test dataset")
     test_dataset = datasets["test"]
